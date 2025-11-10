@@ -1,1 +1,9 @@
-<p>posts works!</p>
+<div class="posts-grid">
+  @for (item of combinedData; track item.id) {
+  <div class="post-card">
+    <div class="username">{{ item.userName }}</div>
+    <div class="post-title">{{ item.title }}</div>
+    <button class="details-btn">დეტალურად</button>
+  </div>
+  }
+</div>
