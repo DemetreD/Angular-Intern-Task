@@ -3,7 +3,7 @@ aside {
   background: #34495e;
   color: white;
   padding: 20px;
-  min-height: max-content;
+  height: 100%;
 }
 
 aside nav ul {
