@@ -1,7 +1,7 @@
 .content-wrapper {
-  flex: 1;
   display: flex;
   justify-content: center;
+  flex: 1;
   background: white;
 }
 
@@ -15,4 +15,21 @@ main {
   flex: 1;
   padding: 20px;
   background: white;
+}
+
+@media (max-width: 1023px) {
+  header .header-content,
+  .content-container,
+  footer .footer-content {
+    max-width: 80%;
+    width: 80%;
+  }
+
+  .content-container {
+    flex-direction: column;
+  }
+
+  aside {
+    width: 100%;
+  }
 }
