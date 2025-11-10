@@ -56,3 +56,30 @@
 .details-btn:active {
   transform: scale(0.98);
 }
+
+/* Mobile phones */
+@media (max-width: 480px) {
+  .posts-grid {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .post-card {
+    padding: 12px;
+  }
+
+  .post-card .username {
+    font-size: 10px;
+    margin-bottom: 6px;
+  }
+
+  .post-card .post-title {
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+
+  .details-btn {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+}
