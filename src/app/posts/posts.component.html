@@ -3,7 +3,15 @@
   <div class="post-card">
     <div class="username">{{ item.userName }}</div>
     <div class="post-title">{{ item.title }}</div>
-    <button class="details-btn">დეტალურად</button>
+    <button class="details-btn" (click)="openDetails(item)">დეტალურად</button>
   </div>
   }
+</div>
+<!-- Popup -->
+<div class="overlay" *ngIf="selectedPost" (click)="closePopup()">
+  <div class="popup" (click)="$event.stopPropagation()">
+    <h2>{{ selectedPost.title }}</h2>
+    <p>{{ selectedPost.body }}</p>
+    <button class="close-btn" (click)="closePopup()">დახურვა</button>
+  </div>
 </div>

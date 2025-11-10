@@ -18,6 +18,7 @@ import { PostService } from '../services/posts.service';
 export class PostsComponent implements OnInit {
   posts: any[] = [];
   combinedData: any[] = [];
+  selectedPost: any = null;
 
   constructor(
     private postsservice: PostService,
@@ -34,23 +35,25 @@ export class PostsComponent implements OnInit {
     }).subscribe({
       next: ({ posts, users }) => {
         if (userId) {
-          // ✅ Show only that user’s posts
+          // user’s posts
           const filteredPosts = posts.filter((post) => post.userId === userId);
           this.combinedData = filteredPosts.map((post) => {
             const user = users.find((u) => u.id === post.userId);
             return {
               id: post.id,
               title: post.title,
+              body: post.body,
               userName: user ? user.name : 'No User',
             };
           });
         } else {
-          // ✅ Show all posts (sidebar link)
+          // all posts 
           this.combinedData = posts.map((post) => {
             const user = users.find((u) => u.id === post.userId);
             return {
               id: post.id,
               title: post.title,
+              body: post.body,
               userName: user ? user.name : 'No User',
             };
           });
@@ -58,5 +61,15 @@ export class PostsComponent implements OnInit {
       },
       error: (error) => console.error('Error fetching data:', error),
     });
+
+    
+    
+    
+  }
+  openDetails(post: any) {
+    this.selectedPost = post;
+  }
+  closePopup() {
+    this.selectedPost = null;
   }
 }
