@@ -12,3 +12,12 @@ header .header__content {
   align-items: center;
   justify-content: space-between;
 }
+.header__title a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.header__title a:hover {
+  text-decoration: underline;
+}
