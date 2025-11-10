@@ -3,6 +3,7 @@ aside {
   background: #34495e;
   color: white;
   padding: 20px;
+  min-height: max-content;
 }
 
 aside nav ul {
@@ -35,4 +36,14 @@ aside nav ul li a:hover {
 aside nav ul li a:active {
   transform: translateY(0);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+@media (max-width: 1023px) {
+  .content-container {
+    flex-direction: column;
+  }
+
+  aside {
+    min-height: auto;
+    width: 100%;
+  }
 }
