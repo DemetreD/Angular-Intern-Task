@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../services/users.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -12,7 +13,7 @@ export class UsersComponent implements OnInit{
 
   users: any[] =[];
 
-  constructor(private userservice: UserService) {}
+  constructor(private userservice: UserService, private router: Router) {}
 
   ngOnInit(): void {
     this.userservice.getData().subscribe(
@@ -21,5 +22,8 @@ export class UsersComponent implements OnInit{
     );
   }
 
+  viewPosts(userId: number) {
+    this.router.navigate(['/posts', userId]);
+  }
 
 }

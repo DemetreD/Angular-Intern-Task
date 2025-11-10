@@ -7,6 +7,7 @@
       <th>ტელეფონის ნომერი</th>
       <th>მეილი</th>
       <th>კომპანიის დასახელება</th>
+      <th>მოქმედებები</th>
     </tr>
   </thead>
   <tbody>
@@ -17,7 +18,9 @@
       <td>{{ user.phone }}</td>
       <td>{{ user.email }}</td>
       <td>{{ user.company.name }}</td>
-      <!-- <td><button (click)="viewPosts(user.id)">პოსტები</button></td> -->
+      <td>
+        <button (click)="viewPosts(user.id)" class="table-btn">პოსტები</button>
+      </td>
     </tr>
     }
   </tbody>
